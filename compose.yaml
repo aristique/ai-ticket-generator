@@ -1,0 +1,25 @@
+services:
+  lab1:
+    build:
+      context: .
+      dockerfile: lab1-console/Dockerfile
+      target: app
+    image: ai-tickets-lab1:local
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    init: true
+    stdin_open: true
+    tty: true
+    environment:
+      JOURNAL_PATH: /data/journal.xlsx
+    volumes:
+      - ./data/lab1:/data
+  test-lab1:
+    build:
+      context: .
+      dockerfile: lab1-console/Dockerfile
+      target: tests
+    image: ai-tickets-lab1-tests:local
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    init: true
+    profiles: [test]
+

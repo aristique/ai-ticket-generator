@@ -4,6 +4,8 @@ __pycache__/
 .venv/
 .env
 data/**
+!data/**/
+!data/**/.gitkeep
 !data/.gitkeep
 *.tmp
 *.egg-info/
