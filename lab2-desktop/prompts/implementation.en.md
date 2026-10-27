@@ -50,4 +50,3 @@ Document one command for tests and one for running the desktop.
 Keep separate pinned application/test dependencies and meaningful incremental Git commits.
 Before calling the lab complete, verify group selection, button state, displayed questions, repeated assignments, ESC, journal persistence and missing/blocked files.
 Record the actual Copilot model, actions, errors and manual corrections without inventing provenance.
-

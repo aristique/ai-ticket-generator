@@ -75,4 +75,3 @@ def test_corrupt_workbook_is_not_overwritten(tmp_path):
     with pytest.raises(JournalError):
         Journal(path).append(Entry.create("Иванов", "Иван", 1))
     assert path.read_bytes() == b"not an xlsx"
-

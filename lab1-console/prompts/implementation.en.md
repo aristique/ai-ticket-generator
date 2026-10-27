@@ -14,4 +14,3 @@ Use Docker Compose, a mounted data directory, pinned dependencies and separate a
 Support Linux and Windows 11 Docker Desktop with Linux containers.
 Add meaningful unit tests; additionally explain manual acceptance scenarios for a real terminal and Windows Excel.
 Keep runtime dependencies out of the host OS.
-

@@ -52,4 +52,3 @@ def main():
     session.app.ttimeoutlen = 0.1
     path = Path(os.environ.get("JOURNAL_PATH", "journal.xlsx"))
     return run(session, Journal(path))
-

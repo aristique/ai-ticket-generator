@@ -71,4 +71,3 @@ def test_real_escape_key_finishes_prompt_without_enter():
             with pytest.raises(EOFError):
                 await asyncio.wait_for(task, timeout=2)
     asyncio.run(scenario())
-

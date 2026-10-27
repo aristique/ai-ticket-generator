@@ -90,4 +90,3 @@ class Journal:
                 workbook.close()
             if temporary is not None:
                 Path(temporary).unlink(missing_ok=True)
-

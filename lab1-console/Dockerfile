@@ -14,4 +14,3 @@ CMD ["python", "-m", "pytest", "-q", "-p", "no:cacheprovider"]
 FROM base AS app
 USER 1000:1000
 CMD ["python", "-m", "tickets"]
-

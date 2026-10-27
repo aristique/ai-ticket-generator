@@ -104,4 +104,3 @@ def test_actual_process_kill_after_save_keeps_record(tmp_path):
         assert read_rows(path)[1][:2] == ("Сохранённый", "Студент")
     finally:
         app.close()
-
