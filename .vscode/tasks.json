@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Lab 1: build",
+      "type": "process",
+      "command": "docker",
+      "args": ["compose", "build", "lab1", "test-lab1"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Lab 1: tests",
+      "type": "process",
+      "command": "docker",
+      "args": ["compose", "run", "--rm", "test-lab1"],
+      "group": {"kind": "test", "isDefault": true},
+      "problemMatcher": []
+    },
+    {
+      "label": "Lab 1: run",
+      "type": "process",
+      "command": "docker",
+      "args": ["compose", "run", "--rm", "lab1"],
+      "problemMatcher": [],
+      "presentation": {"focus": true, "panel": "dedicated"}
+    }
+  ]
+}

@@ -5,4 +5,3 @@
 Dockerfile* text eol=lf
 *.xlsx binary
 *.docx binary
-
