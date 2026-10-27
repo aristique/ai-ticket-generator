@@ -1,4 +1,32 @@
 services:
+  lab2:
+    build:
+      context: .
+      dockerfile: lab2-desktop/Dockerfile
+      target: app
+    image: ai-tickets-lab2:local
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    init: true
+    environment:
+      DATA_DIR: /data
+    volumes:
+      - ./data/lab2:/data
+    ports:
+      - "127.0.0.1:6082:6080"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:6080/vnc.html',timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+  test-lab2:
+    build:
+      context: .
+      dockerfile: lab2-desktop/Dockerfile
+      target: tests
+    image: ai-tickets-lab2-tests:local
+    init: true
+    profiles: [test]
   lab1:
     build:
       context: .

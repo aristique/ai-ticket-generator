@@ -5,6 +5,11 @@ on:
 permissions:
   contents: read
 jobs:
+  lab2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose run --build --rm test-lab2
   lab1:
     runs-on: ubuntu-latest
     steps:
