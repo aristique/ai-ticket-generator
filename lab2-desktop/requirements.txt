@@ -1,0 +1,5 @@
+openpyxl==3.1.5
+et-xmlfile==2.0.0
+python-docx==1.2.0
+lxml==6.0.2
+typing_extensions==4.15.0
