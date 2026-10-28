@@ -60,3 +60,13 @@ def test_demo_setup_never_overwrites(tmp_path):
     with pytest.raises(FileExistsError):
         create(tmp_path)
     assert (tmp_path / "students.xlsx").read_bytes() == before
+
+
+def test_unknown_heading_does_not_attach_questions_to_previous_incomplete_ticket(tmp_path):
+    doc = Document()
+    for paragraph in ("Билет 1", "1. A", "2. B", "Биллет 2", "1. Wrong A",
+                      "2. Wrong B", "3. Wrong C", "Билет 3", "1. C", "2. D", "3. E"):
+        doc.add_paragraph(paragraph)
+    path = tmp_path / "tickets.docx"
+    doc.save(path)
+    assert set(load_tickets(path)) == {3}

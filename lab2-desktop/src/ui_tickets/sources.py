@@ -126,6 +126,8 @@ def load_tickets(path: Path) -> dict[int, Ticket]:
         elif native_numbering(paragraph):
             questions.append(text)
         else:
-            LOG.warning("Unnumbered question skipped in ticket %s: %s", current, text)
+            finish()
+            LOG.error("Unrecognized heading or unnumbered paragraph: %s", text)
+            current, questions = None, []
     finish()
     return result
